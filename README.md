@@ -15,7 +15,7 @@ Com base nisso o grupo buscou uma forma de minimizar o impacto de palavras de ó
 **Uma extensão para o navegador Google Chrome que identifica palavras ofensivas e toma uma ação com a etimologia da palavra com o objetivo de desconstruir a palavra e minimizar o impacto negativo.**
 
 # Solução
-### Mínimo Produto Viavel (MVP)
+### Mínimo Produto Viável (MVP)
 
 No MPV desse projeto a extensão deve:
 - Ler textos do site do twitter
