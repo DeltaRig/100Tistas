@@ -1,0 +1,8 @@
+node_modules/
+build/
+.rest
+*.log
+tsconfig.tsbuildinfo
+*.drawio
+.env
+db/
