@@ -21,7 +21,7 @@ Uma extensão do Chrome que usa uma API feita por [Thiago Nelsi](https://github.
 ### Referências
 1. Vigo D, Thornicroft G, Atun R. Estimating the true global burden of mental illness. The Lancet Psychiatry 2016;3(2):171-8
 2. Vos T, Allen C, Arora M, Barber RM, Brown A, Carter A, et al. Global, regional, and national incidence, prevalence, and years lived with disability for 310 diseases and injuries, 1990-2015: a systematic analysis for the Global Burden of Disease Study 2015. Lancet 2016;388(10053):1545–602. 
-3. [Impacto do uso da internet e redes sociais
-na saúde mental](https://www.proquest.com/openview/b8ccc30c7cf4447a8c621cf8c0fc3317/1?cbl=2026366&diss=y&pq-origsite=gscholar&parentSessionId=OKPYltggvTaz2L4btPHwuYXcHAgCTyyPkmB7DLcIhwo%3D)
+3. Souza K., Ximenes Carneiro da Cunha M. [IMPACTOS DO USO DAS REDES SOCIAIS VIRTUAIS NA SAÚDE MENTAL DOS
+ADOLESCENTES: UMA REVISÃO SISTEMÁTICA DA LITERATURA](https://educacaoepsicologia.emnuvens.com.br/edupsi/article/view/156) 2019.
 4. Jaron Lanier, Ten Arguments For Deleting Your Social Media Accounts Right Now
 - Perinia J., Delanogarea E., Souza S. [Transtornos Mentais Comuns e aspectos psicossociais em universitários do sul do Brasil](http://repositorio.furg.br/handle/1/7872)
