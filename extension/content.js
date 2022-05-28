@@ -1,14 +1,15 @@
-window.addEventListener("mouseup", handleSelection);
+window.addEventListener("onload", handleSelection());
 
 var selectedText;
 
-function handleSelection() {
+async function handleSelection() {
+  console.log("SOCORRO");
   selectedText = window.getSelection().toString().replace(/\s/g, "");
-  pf();
+  await pf();
 
 }
 
-chrome.runtime.onMessage.addListener(gotMessage);
+//chrome.runtime.onMessage.addListener(gotMessage);
 
 async function pf(){
   console.log("oi");
@@ -16,7 +17,7 @@ async function pf(){
   myHeaders.append("Content-Type", "application/json");
 
   var raw = JSON.stringify({
-    "txt": "algum ser humano desgraçado sendo a mão no interfone aqui de casa! FDP"
+    "txt": "algum ser humano arrombado sendo a mão no interfone aqui de casa! FDP"
   });
 
   var requestOptions = {
@@ -26,11 +27,13 @@ async function pf(){
     redirect: 'follow'
   };
 
-  fetch("https://100tistas.duckdns.org/", requestOptions)
-    .then(response => console.log(response))
-    //.then(result => console.log(result))
-    .catch(error => console.log('error', error));
+   await fetch("https://100tistas.duckdns.org/", requestOptions)
+     //.then(response => response)
+     .then(result => console.log(result.text().then(data => console.log('data->', data))))
+     .catch(error => console.log('error', error));
 }
+
+
 function gotMessage(message, sender, sendResponse) {
   let msg =
     selectedText && selectedText.length > 0
