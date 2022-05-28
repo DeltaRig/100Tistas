@@ -17,7 +17,7 @@ Com base nisso o grupo buscou uma forma de minimizar o impacto de palavras de ó
 # Solução
 ### Mínimo Produto Viavel (MVP)
 
-No MPVdesse projeto a extensão deve:
+No MPV desse projeto a extensão deve:
 - Ler textos do site do twitter
 - Identificar insultos/linguagem ofensiva
 - Substituir por outra palavra
@@ -37,7 +37,9 @@ A solução foi elaborada seguindo o seguinte fluxo:
 ### Perspective API
 Essa API, desenvolvida pelo grupo em Python, tem como objetivo identificar palavras de ódio dentro de um texto. Esta hospedada em:
 
-> http://ec2-34-220-79-2.us-west-2.compute.amazonaws.com:5000/
+```
+http://ec2-34-220-79-2.us-west-2.compute.amazonaws.com:5000/
+``` 
 
 Deve receber uma solicitação JSON, sendo um dicionário com o atributo "txt", como abaixo.
 Input:
