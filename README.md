@@ -13,10 +13,36 @@ Com base nisso o grupo buscou uma forma de minimizar o impacto de palavras de od
 
 # Objetivo
 Uma extensão para o navegador Google Chrome que identifica palavras ofensivas e toma uma ação com a etimologia da palavra com o objetivo de desconstruir a palavra e minimizar o impacto negativo.
-![_Fluxograma](https://user-images.githubusercontent.com/41764692/170822415-c9c8b8e8-6ed6-427c-801e-dc55d941588d.png)
 
-## Como?
-Uma extensão do Chrome que usa uma API feita por [Thiago Nelsi](https://github.com/ThiagoNelsi/dicio-api) que recebe uma palavra e retorna as informações de um site de dicionário português. 
+# Solução
+A solução foi elaborada seguindo o seguinte fluxo:
+
+[<img src="https://user-images.githubusercontent.com/41764692/170822415-c9c8b8e8-6ed6-427c-801e-dc55d941588d.png" width="400"/> ](https://user-images.githubusercontent.com/41764692/170822415-c9c8b8e8-6ed6-427c-801e-dc55d941588d.png)
+
+### Perspective API
+Essa API, desenvolvida pelo grupo, tem como objetivo identificar palavras de odio dentro de um texto. Esta hospedada em:
+
+> http://ec2-34-220-79-2.us-west-2.compute.amazonaws.com:5000/
+
+
+### API de dicionário português
+Essa API nesse projeto é responsável por receber uma palavra e retornar sua etimologia e significado. A API feita por [Thiago Nelsi](https://github.com/ThiagoNelsi/dicio-api) que recebe uma palavra e retorna as informações de um site de dicionário português. Colocamos aqui no repositório e hospedamos:
+
+> http://ec2-34-220-79-2.us-west-2.compute.amazonaws.com:3333/
+
+Sendo necessário para obter as informações da API a seguinte solicitação:
+
+> http://ec2-34-220-79-2.us-west-2.compute.amazonaws.com:3333/v2/<PALAVRA>
+  
+Um exemplo de entrada é:
+  
+> http://ec2-34-220-79-2.us-west-2.compute.amazonaws.com:3333/v2/maldito
+  
+Que tem como output:
+
+```
+[{"partOfSpeech":"adjetivo","meanings":["Que foi alvo de maldição, que foi amaldiçoado; condenado, amaldiçoado.","Muito desagradável; muito mau; perverso: tempo maldito; negócio maldito.","Que carrega a infelicidade consigo; funesto, infeliz.","[Artes] Que sofreu condenação da sociedade; cujo valor artístico não foi reconhecido.","[Literatura] Diz-se dos poetas cujas obras foram rejeitadas: poetas malditos."],"etymology":""},{"partOfSpeech":"substantivo masculino","meanings":["Pessoa amaldiçoada, condenada: Ide, malditos, para o fogo eterno!","[Literatura] Poeta rejeitado, desprezado."],"etymology":""},{"partOfSpeech":"expressão","meanings":["[Popular] O maldito. O demônio."],"etymology":"Etimologia (origem da palavra maldito). Do latim maledictus, a, um “amaldiçoado, condenado”."}]    
+```
 
 ### Referências
 1. Vigo D, Thornicroft G, Atun R. Estimating the true global burden of mental illness. The Lancet Psychiatry 2016;3(2):171-8
