@@ -8,8 +8,8 @@ function gotTabs(tabs) {
 
   chrome.tabs.sendMessage(tabs[0].id, msg, function (response) {
     if (!response) {
-      document.getElementById("phonetic").innerHTML = "Bem-vindo!";
-      document.getElementById("example").innerHTML =
+      document.getElementById("word").innerHTML = "Bem-vindo!";
+      document.getElementById("definition").innerHTML =
         "Por favor, selecione uma palavra.";
     } else if (response.swor === "_TextNotSelected_") {
       document.getElementById("error").innerHTML = "Por favor, selecione uma palavra!";
@@ -32,7 +32,7 @@ let wordef,
   indlimit;
 
 async function dictionary(query) {
-  let url = `http://localhost:3333/v2/${query}`;
+  let url = `http://ec2-34-220-79-2.us-west-2.compute.amazonaws.com:3333/v2/${query}`;
   let response = await fetch(url);
   wordef = await response.json();
   if (wordef && !wordef.title) {
@@ -75,11 +75,11 @@ function setValues() {
 
   document.getElementById(
     "word"
-  ).innerHTML = `${word}`;
-  document.getElementById("phonetic").innerHTML = `${pos}`;
+  ).innerHTML = word;
+  document.getElementById("phonetic").innerHTML = pos;
   document.getElementById("definition").innerHTML = defin;
   if (example) {
-    document.getElementById("example").innerHTML = `${example}`;
+    document.getElementById("example").innerHTML = example;
   } else {
     document.getElementById("example").innerHTML = "";
   }
