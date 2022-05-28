@@ -8,14 +8,14 @@ function gotTabs(tabs) {
 
   chrome.tabs.sendMessage(tabs[0].id, msg, function (response) {
     if (!response) {
-      document.getElementById("phonetic").innerHTML = "Welcome!";
+      document.getElementById("phonetic").innerHTML = "Bem-vindo!";
       document.getElementById("example").innerHTML =
-        "Please select a word to find its definition.";
+        "Por favor, selecione uma palavra.";
     } else if (response.swor === "_TextNotSelected_") {
-      document.getElementById("error").innerHTML = "Please select a word!";
+      document.getElementById("error").innerHTML = "Por favor, selecione uma palavra!";
     } else {
       let swo = response.swor;
-      swo = swo.replace(/[^a-zA-Z ]/g, "");
+      swo = swo.replace(/[a-záéíóúçâêôãõà]+[a-záéíóúçâêôãõàA-zÁÉÍÓÚÇÂÊÔÃÕÀA]+/g, "");
       dictionary(swo);
     }
   });
@@ -27,7 +27,7 @@ let wordef,
   pos,
   defin,
   example,
-  sourceurl,
+  // sourceurl,
   index = 0,
   indlimit;
 
@@ -37,9 +37,9 @@ async function dictionary(query) {
   wordef = await response.json();
   if (wordef && !wordef.title) {
     indlimit = wordef[0].meanings.length;
-    word = wordef[0].word;
+    word = query;
     phonetic = wordef[0].phonetic ? wordef[0].phonetic : "";
-    sourceurl = `https://en.wiktionary.org/wiki/${word}`;
+    // sourceurl = `https://en.wiktionary.org/wiki/${word}`;
     index = 0;
 
     setValues();
@@ -70,19 +70,19 @@ function handleNext() {
 }
 
 function setValues() {
-  pos = wordef[0].meanings[index].partOfSpeech;
-  defin = wordef[0].meanings[index].definitions[0].definition;
-  example = wordef[0].meanings[index].definitions[0].example
-    ? wordef[0].meanings[index].definitions[0].example
+  pos = wordef[0].partOfSpeech;
+  defin = wordef[0].meanings[index];
+  example = wordef[0].etymology
+    ? wordef[0].etymology
     : null;
 
   document.getElementById(
     "word"
-  ).innerHTML = `${word} <a href=${sourceurl} class="searchanchor" target="_blank"><img class="searchsvg" title="read more" src = "../assets/searchonweb.svg" alt="read more"/><a>`;
-  document.getElementById("phonetic").innerHTML = `${phonetic}  (${pos})`;
+  ).innerHTML = `${word}`;
+  document.getElementById("phonetic").innerHTML = `${pos}`;
   document.getElementById("definition").innerHTML = defin;
   if (example) {
-    document.getElementById("example").innerHTML = `Example: ${example}`;
+    document.getElementById("example").innerHTML = `${example}`;
   } else {
     document.getElementById("example").innerHTML = "";
   }
