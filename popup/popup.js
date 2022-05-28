@@ -15,7 +15,8 @@ function gotTabs(tabs) {
       document.getElementById("error").innerHTML = "Por favor, selecione uma palavra!";
     } else {
       let swo = response.swor;
-      swo = swo.replace(/[^a-zA-Z ]/g, "");
+      swo = swo.toLowerCase();
+      // swo = swo.replace(/[a-záéíóúçâêôãõà]+[a-záéíóúçâêôãõàA-zÁÉÍÓÚÇÂÊÔÃÕÀA]+/g, "");
       dictionary(swo);
     }
   });
