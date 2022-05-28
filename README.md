@@ -35,7 +35,24 @@ A solução foi elaborada seguindo o seguinte fluxo:
 
 [<img src="https://user-images.githubusercontent.com/41764692/170822415-c9c8b8e8-6ed6-427c-801e-dc55d941588d.png" width="400"/> ](https://user-images.githubusercontent.com/41764692/170822415-c9c8b8e8-6ed6-427c-801e-dc55d941588d.png)
 
-### Perspective API
+### Como rodar
+A pasta extension contém a extensão do chrome que para rodar precisa ir em extenções, gerenciar extensões, modo desenvolvedor ativado, carregar sem compactação e selecionar a pasta "extension".
+
+Para rodar a API da pasta perspective-api foi utilizado Python 3.8. E rodar os comandos para instalar Flask cors e a google API client, como está abaixo para Windowns:
+
+```
+pip install -U flask-cors
+install google-api-python-client
+```
+
+Para rodar a API da pasta 100Tistas-dicio-api é usado TypeScript. É necessário rodar os comandos abaixo dentro da pasta para instalar o mongoose e rodar no Windowns:
+
+```
+npm install mongoose 
+npx ts-node src/index.ts
+```
+
+### API que usa Perspective
 Essa API, desenvolvida pelo grupo em Python, tem como objetivo identificar palavras de ódio dentro de um texto. Esta hospedada em:
 
 ```
