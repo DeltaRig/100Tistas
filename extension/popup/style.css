@@ -1,108 +1,84 @@
-html {
-  border-radius: 40%;
-}
 body {
   width: 300px;
   text-align: center;
-  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  background-color: #eaeaea;
+  padding: 10px;
+}
 
+.image {
+  max-width: fit-content;
+  margin-right: 20px;
 }
 
 #icon {
   width: 60px;
+  box-shadow: rgb(33 33 33 / 20%) 0px 4px 16px;
+  border-radius: 100%;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* 
-h2 {
-  color: #fbfffd;
+.titles {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  max-height: 60px;
+  max-width: 250px;
+  margin: auto;
 }
 
-h1 {
-  font-size: 2rem;
+#error, #word{
+  font-size: 27px;
+  max-width: fit-content;
+  margin-left: 20px;
+  color: #c25556;
+  font-weight: 400;
 }
 
-div {
-  font-size: 1.1rem;
+.mid {
+  color: #08361e;
+  width: 100%;
+  font-size: 12px;
+
 }
 
-.
-#phonetic {
-  color: rgb(0, 0, 0);
-  font-size: 1rem;
+.firstB p {
+  background-color: #d8d8d8;
+  color: #08361e;
+  font-size: 25px;
+  padding: 5px;
+  padding-top: 0px;
 }
 
-.exampleDiv {
-  background-color: #474600;
-  width: 70%;
+.secondB p {
+  background-color: #297a4d;
+  color: #d8d8d8;
+  padding: 5px;
+  box-shadow: rgb(33 33 33 / 20%) 0px 4px 16px;
 }
-#example {
-  font-size: 1rem;
-  width: 70%;
-  
-  color: #ffffff;
-}
+
 
 .navigate-container {
   display: flex;
   justify-content: space-between;
   text-align: center;
-  background-color: #ffffff;
 }
 
 .navigator {
+  height: 10px;
   text-decoration: none;
   display: inline-block;
   padding: 6px 14px;
+  padding-top: 0;
 }
 
-.hidenavigator {
-  display: none;
+#prev, #next {
+  font-size: 16px;
+  padding-bottom: 11px;
+  color: #08361e;
 }
 
-.navigator:hover {
-  cursor: pointer;
-  background-color: rgb(4, 58, 19);
-  color: rgb(255, 255, 255);
+#definition {
+  font-size: 20px;
 }
-
-.previous,
-.next {
-  background-color: #01462d;
-  color: rgb(255, 255, 255);
-}
-
-.searchsvg {
-  width: 17px;
-  user-drag: none;
-  -webkit-user-drag: none;
-  user-select: none;
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-}
-
-.searchanchor {
-  text-decoration: none;
-  outline: none;
-}
-
-.searchanchor:hover {
-  text-decoration: none;
-  outline: none;
-  border: none;
-} */

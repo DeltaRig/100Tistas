@@ -1,3 +1,4 @@
+
 let query = { active: true, currentWindow: true };
 
 chrome.tabs.query(query, gotTabs);
@@ -8,19 +9,20 @@ function gotTabs(tabs) {
 
   chrome.tabs.sendMessage(tabs[0].id, msg, function (response) {
     if (!response) {
-      document.getElementById("phonetic").innerHTML = "Bem-vindo!";
+      document.getElementById("phonetic").innerHTML = "Bem-Vindo!";
       document.getElementById("example").innerHTML =
-        "Por favor, selecione uma palavra.";
+        "Selecione sua palavra.";
     } else if (response.swor === "_TextNotSelected_") {
-      document.getElementById("error").innerHTML = "Por favor, selecione uma palavra!";
+      document.getElementById("error").innerHTML = "Selecione uma palavra!";
     } else {
       let swo = response.swor;
-      swo = swo.toLowerCase();
-      // swo = swo.replace(/[a-záéíóúçâêôãõà]+[a-záéíóúçâêôãõàA-zÁÉÍÓÚÇÂÊÔÃÕÀA]+/g, "");
+      swo = swo.replace(/[^a-zA-Z ]/g, "");
       dictionary(swo);
     }
   });
 }
+
+
 
 let wordef,
   word,
@@ -71,15 +73,17 @@ function handleNext() {
 function setValues() {
   pos = wordef[0].partOfSpeech;
   defin = wordef[0].meanings[index];
-  example = wordef[0].etymology;
+  example = wordef[0].etymology
+    ? wordef[0].etymology
+    : null;
 
   document.getElementById(
     "word"
   ).innerHTML = `${word}`;
-  document.getElementById("phonetic").innerHTML = `${pos}`;
+  document.getElementById("phonetic").innerHTML = `${phonetic}  (${pos})`;
   document.getElementById("definition").innerHTML = defin;
   if (example) {
-    document.getElementById("example").innerHTML = `${example}`;
+    document.getElementById("example").innerHTML = `Example: ${example}`;
   } else {
     document.getElementById("example").innerHTML = "";
   }

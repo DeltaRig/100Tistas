@@ -1,38 +1,12 @@
-window.addEventListener("onload", handleSelection());
+window.addEventListener("mouseup", handleSelection);
 
 var selectedText;
 
-async function handleSelection() {
-  console.log("SOCORRO");
+function handleSelection() {
   selectedText = window.getSelection().toString().replace(/\s/g, "");
-  await pf();
-
 }
 
-//chrome.runtime.onMessage.addListener(gotMessage);
-
-async function pf(){
-  console.log("oi");
-  var myHeaders = new Headers();
-  myHeaders.append("Content-Type", "application/json");
-
-  var raw = JSON.stringify({
-    "txt": "algum ser humano arrombado sendo a mão no interfone aqui de casa! FDP"
-  });
-
-  var requestOptions = {
-    method: 'POST',
-    headers: myHeaders,
-    body: raw,
-    redirect: 'follow'
-  };
-
-   await fetch("https://100tistas.duckdns.org/", requestOptions)
-     //.then(response => response)
-     .then(result => console.log(result.text().then(data => console.log('data->', data))))
-     .catch(error => console.log('error', error));
-}
-
+chrome.runtime.onMessage.addListener(gotMessage);
 
 function gotMessage(message, sender, sendResponse) {
   let msg =
@@ -40,4 +14,56 @@ function gotMessage(message, sender, sendResponse) {
       ? selectedText
       : "_TextNotSelected_";
   sendResponse({ swor: msg });
+}
+
+
+
+
+
+
+
+window.addEventListener("onload", handleSelection2());
+
+var selectedText2;
+
+async function handleSelection2() {
+  console.log("SOCORRO");
+  selectedText2 = window.getSelection().toString().replace(".*", "");
+  await pf();
+
+}
+
+async function pf(){
+  console.log("oi");
+  var myHeaders2 = new Headers();
+  myHeaders2.append("Content-Type", "application/json");
+
+  var raw2 = JSON.stringify({
+    "txt": "algum ser humano arrombado sendo a mão no interfone aqui de casa! FDP"
+  });
+
+  var requestOptions2 = {
+    method: 'POST',
+    headers: myHeaders2,
+    body: raw2,
+    redirect: 'follow'
+  };
+
+  var retainData;
+   await fetch("https://100tistas.duckdns.org/", requestOptions2)
+     //.then(response => response)
+     .then(result2 => console.log(result2.text().then(data2 => console.log(data2.response.element))))
+     .catch(error2 => console.log('error', error2));
+
+var newRetain = retainData;
+
+chrome.runtime.onMessage.addListener(gotMessage);
+
+function gotMessage2(message2, sender2, sendResponse2) {
+  let msg2 =
+    selectedText2 && selectedText2.length > 0
+      ? selectedText2
+      : "TextNotSelected";
+  sendResponse2({ swor2: msg2 });
+}
 }
