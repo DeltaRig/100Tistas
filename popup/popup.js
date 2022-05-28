@@ -3,11 +3,13 @@ let query = { active: true, currentWindow: true };
 chrome.tabs.query(query, gotTabs);
 
 function gotTabs(tabs) {
+  console.log("gotTabs");
   let msg = {
     txt: "hello from popup",
   };
 
   chrome.tabs.sendMessage(tabs[0].id, msg, function (response) {
+    console.log("sendMessage");
     if (!response) {
       document.getElementById("phonetic").innerHTML = "Bem-vindo!";
       document.getElementById("example").innerHTML =
@@ -33,6 +35,7 @@ let wordef,
   indlimit;
 
 async function dictionary(query) {
+  console.log("dictionary");
   let url = `http://localhost:3333/v2/${query}`;
   let response = await fetch(url);
   // pegaT();
@@ -59,18 +62,21 @@ document.getElementById("prev").addEventListener("click", handlePrevious);
 document.getElementById("next").addEventListener("click", handleNext);
 
 function handlePrevious() {
+  console.log("handlePrevious");
   index = index - 1;
   if (index < 0) index = indlimit - 1;
   setValues();
 }
 
 function handleNext() {
+  console.log("handleNext");
   index = index + 1;
   if (index >= indlimit) index = 0;
   setValues();
 }
 
 function setValues() {
+  console.log("setValues");
   pos = wordef[0].partOfSpeech;
   defin = wordef[0].meanings[index];
   example = wordef[0].etymology;
