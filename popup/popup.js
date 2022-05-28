@@ -1,6 +1,7 @@
 let query = { active: true, currentWindow: true };
 
 chrome.tabs.query(query, gotTabs);
+
 function gotTabs(tabs) {
   let msg = {
     txt: "hello from popup",
@@ -34,6 +35,7 @@ let wordef,
 async function dictionary(query) {
   let url = `http://localhost:3333/v2/${query}`;
   let response = await fetch(url);
+  // pegaT();
   wordef = await response.json();
   if (wordef && !wordef.title) {
     indlimit = wordef[0].meanings.length;
