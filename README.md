@@ -88,4 +88,5 @@ Que tem como output:
 3. Souza K., Ximenes Carneiro da Cunha M. [IMPACTOS DO USO DAS REDES SOCIAIS VIRTUAIS NA SAÚDE MENTAL DOS
 ADOLESCENTES: UMA REVISÃO SISTEMÁTICA DA LITERATURA](https://educacaoepsicologia.emnuvens.com.br/edupsi/article/view/156) 2019.
 4. Jaron Lanier, Ten Arguments For Deleting Your Social Media Accounts Right Now
+5. Catherine L., Caldwell-Harris, Ayşe Ayçiçeği-Dinn[Emotion and lying in a non-native language](https://www.sciencedirect.com/science/article/pii/S0167876008008052) 2008.
 - Perinia J., Delanogarea E., Souza S. [Transtornos Mentais Comuns e aspectos psicossociais em universitários do sul do Brasil](http://repositorio.furg.br/handle/1/7872)
