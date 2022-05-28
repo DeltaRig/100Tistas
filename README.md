@@ -12,7 +12,7 @@ Já foi verificado que as redes sociais virtuais podem gerar grandes impactos na
 Com base nisso o grupo buscou uma forma de minimizar o impacto de palavras de odio e ofensas nas redes sociais por meio de uma extensão de navegador, 
 
 # Objetivo
-Uma extensão para o navegador Google Chrome que identifica palavras ofensivas e toma uma ação com a etimologia da palavra com o objetivo de desconstruir a palavra e minimizar o impacto negativo.
+**Uma extensão para o navegador Google Chrome que identifica palavras ofensivas e toma uma ação com a etimologia da palavra com o objetivo de desconstruir a palavra e minimizar o impacto negativo.**
 
 # Solução
 A solução foi elaborada seguindo o seguinte fluxo:
@@ -44,7 +44,7 @@ Que tem como output:
 [{"partOfSpeech":"adjetivo","meanings":["Que foi alvo de maldição, que foi amaldiçoado; condenado, amaldiçoado.","Muito desagradável; muito mau; perverso: tempo maldito; negócio maldito.","Que carrega a infelicidade consigo; funesto, infeliz.","[Artes] Que sofreu condenação da sociedade; cujo valor artístico não foi reconhecido.","[Literatura] Diz-se dos poetas cujas obras foram rejeitadas: poetas malditos."],"etymology":""},{"partOfSpeech":"substantivo masculino","meanings":["Pessoa amaldiçoada, condenada: Ide, malditos, para o fogo eterno!","[Literatura] Poeta rejeitado, desprezado."],"etymology":""},{"partOfSpeech":"expressão","meanings":["[Popular] O maldito. O demônio."],"etymology":"Etimologia (origem da palavra maldito). Do latim maledictus, a, um “amaldiçoado, condenado”."}]    
 ```
 
-### Referências
+# Referências
 1. Vigo D, Thornicroft G, Atun R. Estimating the true global burden of mental illness. The Lancet Psychiatry 2016;3(2):171-8
 2. Vos T, Allen C, Arora M, Barber RM, Brown A, Carter A, et al. Global, regional, and national incidence, prevalence, and years lived with disability for 310 diseases and injuries, 1990-2015: a systematic analysis for the Global Burden of Disease Study 2015. Lancet 2016;388(10053):1545–602. 
 3. Souza K., Ximenes Carneiro da Cunha M. [IMPACTOS DO USO DAS REDES SOCIAIS VIRTUAIS NA SAÚDE MENTAL DOS
