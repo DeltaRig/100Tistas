@@ -1,16 +1,12 @@
 let query = { active: true, currentWindow: true };
 
 chrome.tabs.query(query, gotTabs);
-
 function gotTabs(tabs) {
-  console.log("gotTabs");
   let msg = {
     txt: "hello from popup",
   };
-  read(selectedText2);
 
   chrome.tabs.sendMessage(tabs[0].id, msg, function (response) {
-    console.log("sendMessage");
     if (!response) {
       document.getElementById("phonetic").innerHTML = "Bem-vindo!";
       document.getElementById("example").innerHTML =
@@ -20,6 +16,7 @@ function gotTabs(tabs) {
     } else {
       let swo = response.swor;
       swo = swo.toLowerCase();
+      // swo = swo.replace(/[a-záéíóúçâêôãõà]+[a-záéíóúçâêôãõàA-zÁÉÍÓÚÇÂÊÔÃÕÀA]+/g, "");
       dictionary(swo);
     }
   });
@@ -35,7 +32,6 @@ let wordef,
   indlimit;
 
 async function dictionary(query) {
-  console.log("dictionary");
   let url = `http://localhost:3333/v2/${query}`;
   let response = await fetch(url);
   wordef = await response.json();
@@ -61,21 +57,18 @@ document.getElementById("prev").addEventListener("click", handlePrevious);
 document.getElementById("next").addEventListener("click", handleNext);
 
 function handlePrevious() {
-  console.log("handlePrevious");
   index = index - 1;
   if (index < 0) index = indlimit - 1;
   setValues();
 }
 
 function handleNext() {
-  console.log("handleNext");
   index = index + 1;
   if (index >= indlimit) index = 0;
   setValues();
 }
 
 function setValues() {
-  console.log("setValues");
   pos = wordef[0].partOfSpeech;
   defin = wordef[0].meanings[index];
   example = wordef[0].etymology;

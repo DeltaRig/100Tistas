@@ -1,10 +1,35 @@
+html {
+  border-radius: 40%;
+}
 body {
-  min-width: 300px;
+  width: 300px;
   text-align: center;
+  background-color: #ffffff;
+
 }
 
+#icon {
+  width: 60px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
 h2 {
-  color: #ff2626;
+  color: #fbfffd;
 }
 
 h1 {
@@ -13,17 +38,23 @@ h1 {
 
 div {
   font-size: 1.1rem;
-  background-color: #fff47d;
 }
 
+.
 #phonetic {
-  color: brown;
+  color: rgb(0, 0, 0);
   font-size: 1rem;
 }
 
+.exampleDiv {
+  background-color: #474600;
+  width: 70%;
+}
 #example {
   font-size: 1rem;
-  background-color: #9ddac6;
+  width: 70%;
+  
+  color: #ffffff;
 }
 
 .navigate-container {
@@ -45,14 +76,14 @@ div {
 
 .navigator:hover {
   cursor: pointer;
-  background-color: #ddd;
-  color: black;
+  background-color: rgb(4, 58, 19);
+  color: rgb(255, 255, 255);
 }
 
 .previous,
 .next {
-  background-color: #f1f1f1;
-  color: black;
+  background-color: #01462d;
+  color: rgb(255, 255, 255);
 }
 
 .searchsvg {
@@ -74,4 +105,4 @@ div {
   text-decoration: none;
   outline: none;
   border: none;
-}
+} */
