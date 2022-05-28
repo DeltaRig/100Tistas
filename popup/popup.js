@@ -15,7 +15,7 @@ function gotTabs(tabs) {
       document.getElementById("error").innerHTML = "Por favor, selecione uma palavra!";
     } else {
       let swo = response.swor;
-      swo = swo.replace(/[a-záéíóúçâêôãõà]+[a-záéíóúçâêôãõàA-zÁÉÍÓÚÇÂÊÔÃÕÀA]+/g, "");
+      swo = swo.replace(/[^a-zA-Z ]/g, "");
       dictionary(swo);
     }
   });
@@ -27,19 +27,17 @@ let wordef,
   pos,
   defin,
   example,
-  // sourceurl,
   index = 0,
   indlimit;
 
 async function dictionary(query) {
-  let url = `https://api.dictionaryapi.dev/api/v2/entries/en/${query}`;
+  let url = `http://localhost:3333/v2/${query}`;
   let response = await fetch(url);
   wordef = await response.json();
   if (wordef && !wordef.title) {
     indlimit = wordef[0].meanings.length;
     word = query;
-    phonetic = wordef[0].phonetic ? wordef[0].phonetic : "";
-    // sourceurl = `https://en.wiktionary.org/wiki/${word}`;
+    phonetic = wordef[0].partOfSpeech ? wordef[0].partOfSpeech : "";
     index = 0;
 
     setValues();
@@ -72,9 +70,7 @@ function handleNext() {
 function setValues() {
   pos = wordef[0].partOfSpeech;
   defin = wordef[0].meanings[index];
-  example = wordef[0].etymology
-    ? wordef[0].etymology
-    : null;
+  example = wordef[0].etymology;
 
   document.getElementById(
     "word"
