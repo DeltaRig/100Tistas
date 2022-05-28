@@ -1,21 +1,25 @@
 let query = { active: true, currentWindow: true };
 
 chrome.tabs.query(query, gotTabs);
+
 function gotTabs(tabs) {
+  console.log("gotTabs");
   let msg = {
     txt: "hello from popup",
   };
 
   chrome.tabs.sendMessage(tabs[0].id, msg, function (response) {
+    console.log("sendMessage");
     if (!response) {
-      // document.getElementById("phonetic").innerHTML = "Bem-vindo!";
+      document.getElementById("phonetic").innerHTML = "Bem-vindo!";
       document.getElementById("example").innerHTML =
-        "Por favor, selecione uma palavra para ver seu significado.";
+        "Por favor, selecione uma palavra.";
     } else if (response.swor === "_TextNotSelected_") {
       document.getElementById("error").innerHTML = "Por favor, selecione uma palavra!";
     } else {
       let swo = response.swor;
-      swo = swo.replace(/[^a-zA-Z ]/g, "");
+      swo = swo.toLowerCase();
+      // swo = swo.replace(/[a-záéíóúçâêôãõà]+[a-záéíóúçâêôãõàA-zÁÉÍÓÚÇÂÊÔÃÕÀA]+/g, "");
       dictionary(swo);
     }
   });
@@ -23,23 +27,23 @@ function gotTabs(tabs) {
 
 let wordef,
   word,
-  // phonetic,
+  phonetic,
   pos,
   defin,
   example,
-  sourceurl,
   index = 0,
   indlimit;
 
 async function dictionary(query) {
-  let url = `https://significado.herokuapp.com/v2/${query}`;
+  console.log("dictionary");
+  let url = `http://localhost:3333/v2/${query}`;
   let response = await fetch(url);
+  // pegaT();
   wordef = await response.json();
   if (wordef && !wordef.title) {
     indlimit = wordef[0].meanings.length;
     word = query;
-    phonetic = wordef[0].partOfSpeech ? wordef[0].partOfSpeech : "Indefinido";
-    // sourceurl = `https://en.wiktionary.org/wiki/${word}`;
+    phonetic = wordef[0].partOfSpeech ? wordef[0].partOfSpeech : "";
     index = 0;
 
     setValues();
@@ -58,18 +62,21 @@ document.getElementById("prev").addEventListener("click", handlePrevious);
 document.getElementById("next").addEventListener("click", handleNext);
 
 function handlePrevious() {
+  console.log("handlePrevious");
   index = index - 1;
   if (index < 0) index = indlimit - 1;
   setValues();
 }
 
 function handleNext() {
+  console.log("handleNext");
   index = index + 1;
   if (index >= indlimit) index = 0;
   setValues();
 }
 
 function setValues() {
+  console.log("setValues");
   pos = wordef[0].partOfSpeech;
   defin = wordef[0].meanings[index];
   example = wordef[0].etymology;
@@ -80,7 +87,7 @@ function setValues() {
   document.getElementById("phonetic").innerHTML = `${pos}`;
   document.getElementById("definition").innerHTML = defin;
   if (example) {
-    document.getElementById("example").innerHTML = `Etimologia: ${example}`;
+    document.getElementById("example").innerHTML = `${example}`;
   } else {
     document.getElementById("example").innerHTML = "";
   }
