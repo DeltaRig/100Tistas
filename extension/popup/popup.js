@@ -7,6 +7,7 @@ function gotTabs(tabs) {
   let msg = {
     txt: "hello from popup",
   };
+  read(selectedText2);
 
   chrome.tabs.sendMessage(tabs[0].id, msg, function (response) {
     console.log("sendMessage");
@@ -19,7 +20,6 @@ function gotTabs(tabs) {
     } else {
       let swo = response.swor;
       swo = swo.toLowerCase();
-      // swo = swo.replace(/[a-záéíóúçâêôãõà]+[a-záéíóúçâêôãõàA-zÁÉÍÓÚÇÂÊÔÃÕÀA]+/g, "");
       dictionary(swo);
     }
   });
@@ -38,7 +38,6 @@ async function dictionary(query) {
   console.log("dictionary");
   let url = `http://localhost:3333/v2/${query}`;
   let response = await fetch(url);
-  // pegaT();
   wordef = await response.json();
   if (wordef && !wordef.title) {
     indlimit = wordef[0].meanings.length;
