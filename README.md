@@ -9,7 +9,8 @@ Os transtornos mentais caracterizam-se como um dos principais fatores responsáv
 
 Já foi verificado que as redes sociais virtuais podem gerar grandes impactos na vida de qualquer pessoa, dentre eles: a ansiedade, depressão e dependência. Isso ocorre principalmente devido ao cyberbulling (3) além de ser explicado po Jaron Lanier em seu livro "Ten Arguments For Deleting Your Social Media Accounts Right Now" (4), onde ele explica que as redes sociais tem poder de influenciar no que falamos. Isso também é explicado por neurologistas, porque o ambiente no qual estamos inseridos influênciar em nossos comportamentos e o ambiente online também é capaz de servir como modulador. 
 
-Com base nisso o grupo buscou uma forma de minimizar o impacto de palavras de ódio e ofensas nas redes sociais por meio de uma extensão de navegador, 
+E considernado que já foi feito uma pesquisa que identificou uma diferença significativa nas emoções de uma pessoa se ela está lendo ou falando em uma língua que não seja a sua nativa. 
+Com base nisso o grupo buscou uma forma de minimizar o impacto de palavras de ódio e ofensas nas redes sociais por meio de uma extensão de navegador. Elas expressam reações mais tranquilas quando utilizada uma segunda língua. Sabendo de desses pontos, o grupo decidiu trocar as palavras de odio por sua etimologia ou sinonimos mais leves os quais acreditamos que também trazem uma diferença nas emoções do leitor.
 
 # Objetivo
 **Uma extensão para o navegador Google Chrome que identifica palavras ofensivas e toma uma ação com a etimologia da palavra com o objetivo de desconstruir a palavra e minimizar o impacto negativo.**
